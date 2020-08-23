@@ -3,16 +3,19 @@
     "description": "Source code of cojam.ru website",
     "private": true,
     "version": "4.0.0",
+    "author": "Dmitry <dmitry@cojam.ru> (https://e965.ru)",
+    "repository": "github:cojamru/cojam.ru",
+    "license": "MIT",
     "scripts": {
         "build": "rollup -c",
         "dev": "rollup -c -w",
         "start": "sirv public",
         "validate": "svelte-check",
-        "prettier": "prettier --write **/*.{html,json,js,ts,css,scss}",
+        "prettier": "prettier --write **/*.{html,json,js,ts,css,scss,svelte}",
         "lint-staged": "lint-staged"
     },
     "lint-staged": {
-        "*.{html,json,js,ts,css,scss}": [
+        "*.{html,json,js,ts,css,scss,svelte}": [
             "prettier --write"
         ]
     },
@@ -23,6 +26,7 @@
     },
     "dependencies": {
         "svelte": "3.24.1",
+        "svelte-icons": "2.1.0",
         "svelte-routing": "1.4.2"
     },
     "devDependencies": {
