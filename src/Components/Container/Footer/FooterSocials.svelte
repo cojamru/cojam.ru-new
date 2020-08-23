@@ -33,17 +33,19 @@
     {#each Links as Link}
         <li>
             <a href="{Link.to}" target="_blank" rel="nofollow noopener">
-                {#if Link.icon === 'vk'}
-                    <FaVk />
-                {:else if Link.icon === 'facebook'}
-                    <FaFacebookSquare />
-                {:else if Link.icon === 'bandcamp'}
-                    <FaBandcamp />
-                {:else if Link.icon === 'insta'}
-                    <FaInstagram />
-                {:else if Link.icon === 'youtube'}
-                    <FaYoutube />
-                {/if}
+                <picture>
+                    {#if Link.icon === 'vk'}
+                        <FaVk />
+                    {:else if Link.icon === 'facebook'}
+                        <FaFacebookSquare />
+                    {:else if Link.icon === 'bandcamp'}
+                        <FaBandcamp />
+                    {:else if Link.icon === 'insta'}
+                        <FaInstagram />
+                    {:else if Link.icon === 'youtube'}
+                        <FaYoutube />
+                    {/if}
+                </picture>
             </a>
         </li>
     {/each}

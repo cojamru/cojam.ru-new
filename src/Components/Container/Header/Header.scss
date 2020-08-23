@@ -1,0 +1,105 @@
+@import '../../../styles/Imports';
+
+.header {
+    background-image: var(--background-image);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+
+    padding: 100px 10px;
+
+    user-select: none;
+    cursor: default;
+
+    & > * {
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    h1 {
+        font-size: 3em;
+        color: #fff;
+        a {
+            color: inherit;
+        }
+    }
+
+    nav {
+        width: -moz-fit-content;
+        width: fit-content;
+        margin: 5px auto 0;
+
+        &.not-inline {
+            li {
+                a {
+                    border-radius: 0 !important;
+                }
+            }
+        }
+
+        ul {
+            font-size: 0;
+        }
+
+        li {
+            display: inline-block;
+            list-style: none;
+            font-size: var(--font-size);
+            margin: 10px 4px 0;
+
+            &:first-child {
+                a {
+                    border-radius: var(--menu-border-radius) 0 0 var(--menu-border-radius);
+                }
+            }
+
+            &:last-child {
+                a {
+                    border-radius: 0 var(--menu-border-radius) var(--menu-border-radius) 0;
+                }
+            }
+
+            a {
+                @include flexbox(auto, center, center, auto);
+                height: 100%;
+                background-color: #fff;
+                transform: skew(-20deg);
+                font-size: 1.1em;
+                padding: 5px 10px;
+                color: #000;
+
+                @include transition(0.3s);
+
+                &:hover {
+                    background-color: darken(#fff, 10%);
+                    opacity: 1;
+                }
+
+                &.current {
+                    background-color: var(--prime-color);
+                    color: #fff;
+                }
+
+                span {
+                    transform: skew(20deg);
+                    line-height: 1.2;
+                }
+            }
+        }
+
+        &:not(.not-inline) {
+            li {
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

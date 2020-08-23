@@ -1,5 +1,5 @@
-<script>
-    import { link, links } from 'svelte-routing';
+<script lang="ts">
+    import { Link } from 'yrv';
 
     import APP_CONFIG from '../../../config';
 
@@ -11,21 +11,21 @@
     }));
 </script>
 
-<style>
-
+<style global lang="scss">
+    @import './Header';
 </style>
 
 <header class="header">
     <h1>
-        <a href="{AppPaths.index}" rel="home" use:link>Coffee Jam Party</a>
+        <Link href="{AppPaths.index}" rel="home">Coffee Jam Party</Link>
     </h1>
     <nav>
-        <ul use:links>
-            {#each Links as Link}
+        <ul>
+            {#each Links as LinkItem}
                 <li>
-                    <a href="{Link.to}">
-                        <span>{Link.text}</span>
-                    </a>
+                    <Link href="{LinkItem.to}">
+                        <span>{LinkItem.text}</span>
+                    </Link>
                 </li>
             {/each}
         </ul>
