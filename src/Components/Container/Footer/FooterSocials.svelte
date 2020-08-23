@@ -9,6 +9,7 @@
         {
             to: 'https://vk.com/tehcojam',
             icon: 'vk',
+            bigIcon: true,
         },
         {
             to: 'https://www.facebook.com/cojamru',
@@ -24,7 +25,8 @@
         },
         {
             to: 'https://www.youtube.com/c/cojamru',
-            icon: 'bandcamp',
+            icon: 'youtube',
+            bigIcon: true,
         },
     ];
 </script>
@@ -33,7 +35,7 @@
     {#each Links as Link}
         <li>
             <a href="{Link.to}" target="_blank" rel="nofollow noopener">
-                <picture>
+                <picture data-big-icon="{Link.bigIcon}">
                     {#if Link.icon === 'vk'}
                         <FaVk />
                     {:else if Link.icon === 'facebook'}

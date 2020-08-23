@@ -46,10 +46,14 @@
 
             picture {
                 display: block;
-                width: 1.5rem;
+                width: 1rem;
 
                 svg {
-                    color: #fff;
+                    color: #000;
+                }
+
+                &[data-big-icon] {
+                    width: 1.5rem;
                 }
             }
         }

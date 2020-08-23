@@ -6,6 +6,8 @@
     import FooterSocials from './FooterSocials.svelte';
 
     const { paths: AppPaths } = APP_CONFIG;
+
+    const CurrentYear = new Date().getFullYear();
 </script>
 
 <style global lang="scss">
@@ -17,6 +19,6 @@
 
     <p class="footer__note">
         <Link href="{AppPaths.index}" rel="home">Коджем</Link>
-        <span>, 2013 – {new Date().getFullYear()}</span>
+        <span>, 2013 – {CurrentYear}</span>
     </p>
 </footer>

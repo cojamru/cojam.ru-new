@@ -51,7 +51,7 @@ a {
     }
 }
 
-main {
+.content {
     margin: 0 auto;
     width: $pageWidth;
     padding: 20px;
@@ -85,7 +85,7 @@ main {
 }
 
 @media screen and (max-width: #{$pageWidth - 1px}) {
-    main {
+    .content {
         width: 100%;
     }
 }

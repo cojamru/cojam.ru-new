@@ -78,7 +78,7 @@
                     opacity: 1;
                 }
 
-                &.current {
+                &[aria-current] {
                     background-color: var(--prime-color);
                     color: #fff;
                 }

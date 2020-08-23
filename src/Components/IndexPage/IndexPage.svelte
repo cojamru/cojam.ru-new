@@ -1,9 +1,9 @@
-<style lang="scss">
-    .footer {
-        &__socials {
-            display: none;
-        }
-    }
+<script lang="ts">
+
+</script>
+
+<style global lang="scss">
+    @import './IndexPage.scss';
 </style>
 
 <hr />

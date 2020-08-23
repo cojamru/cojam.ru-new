@@ -1,0 +1,46 @@
+@import '../../styles/Imports';
+
+.container[data-location='/'] {
+    @include flexbox(column, center, center, auto);
+
+    overflow: hidden;
+
+    background-image: var(--background-image);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+
+    hr {
+        width: calc(100% - 20px);
+        margin: 20px 0;
+
+        opacity: 0.1;
+    }
+
+    .header,
+    .footer {
+        padding: 0 !important;
+    }
+
+    .header {
+        background-image: none;
+    }
+
+    .content {
+        display: contents;
+    }
+
+    .footer {
+        &__socials {
+            margin-top: 0;
+
+            svg {
+                color: #fff;
+            }
+        }
+
+        &__note {
+            display: none;
+        }
+    }
+}

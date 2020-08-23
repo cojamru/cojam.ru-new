@@ -7,7 +7,7 @@
 
 <div class="container" data-location="{$router.path}">
     <Header />
-    <main>
+    <main class="content">
         <slot />
     </main>
     <Footer />
