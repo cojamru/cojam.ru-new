@@ -9,7 +9,7 @@
     const MusicPage = () => import('../MusicPage/MusicPage.svelte');
     const GamesPage = () => import('../GamesPage/GamesPage.svelte');
 
-    const { paths: AppPaths } = APP_CONFIG;
+    const { paths: AppPaths, cdn } = APP_CONFIG;
 </script>
 
 <style global lang="scss">

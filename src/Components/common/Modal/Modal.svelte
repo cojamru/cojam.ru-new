@@ -7,6 +7,7 @@
         likely.initiate();
     });
 
+    export let isOpen: boolean;
     export let className: string;
     export let id: string;
     export let heading: string;
@@ -21,7 +22,7 @@
     @import './Modal';
 </style>
 
-<div class="modal modal--{className}">
+<div class="modal modal--{className}" hidden="{!isOpen}">
     <button class="modal__close" aria-label="Закрыть">🗙</button>
     <div class="modal__container">
         <div class="modal__content">

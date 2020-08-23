@@ -1,5 +1,9 @@
 <script lang="ts">
+    import MusicDB from '../../db/music';
 
+    import MusicAlbum from './MusicAlbum/MusicAlbum.svelte';
+
+    const { albums } = MusicDB;
 </script>
 
 <div class="text">
@@ -13,4 +17,10 @@
     </p>
 </div>
 
-<div class="music"></div>
+<hr />
+
+<div class="music">
+    {#each albums as album}
+        <MusicAlbum {album} />
+    {/each}
+</div>
