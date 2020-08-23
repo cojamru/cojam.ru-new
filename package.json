@@ -8,8 +8,8 @@
     "license": "MIT",
     "scripts": {
         "build": "rollup -c",
-        "dev": "rollup -c -w",
-        "start": "sirv public",
+        "start": "rollup -c -w",
+        "host": "sirv public",
         "validate": "svelte-check",
         "prettier": "prettier --write **/*.{html,json,js,ts,css,scss,svelte}",
         "lint-staged": "lint-staged"
