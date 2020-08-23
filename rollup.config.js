@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import css from 'rollup-plugin-css-only';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import del from 'rollup-plugin-delete';
@@ -30,26 +31,31 @@ function serve() {
     };
 }
 
+const BuildDir = 'public/build';
+
 export default {
     input: 'src/main.ts',
     output: {
         sourcemap: true,
         format: 'es',
         name: 'cojamApp',
-        dir: 'public/build',
+        dir: BuildDir,
     },
     plugins: [
-        del({ targets: 'public/build/*' }),
+        del({ targets: `${BuildDir}/*'` }),
+
         svelte({
             // enable run-time checks when not in production
             dev: !production,
             // we'll extract any component CSS out into
             // a separate file - better for performance
             css: css => {
-                css.write('public/build/bundle.css');
+                css.write(`${BuildDir}/bundle.css`);
             },
             preprocess: sveltePreprocess(),
         }),
+
+        css({ output: `${BuildDir}/extra.css` }),
 
         // If you have external dependencies installed from
         // npm, you'll most likely need these plugins. In
@@ -60,7 +66,9 @@ export default {
             browser: true,
             dedupe: ['svelte'],
         }),
+
         commonjs(),
+
         typescript({ sourceMap: !production }),
 
         // In dev mode, call `npm run start` once
